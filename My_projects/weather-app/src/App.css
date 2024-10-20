@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  color: var(--text-color, #f5f5dc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.5s ease-in-out;
+}
+
+.app-container {
+  background: rgba(44, 62, 80, 0.85);
+  border-radius: 15px;
+  padding: 30px;
+  width: 90vw;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #f5f5dc;
+  animation: slideDown 1s ease-in-out;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-city {
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.input-city:focus {
+  transform: scale(1.05);
+}
+
+.get-weather,
+.current-location,
+.toggle-unit {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1.2rem;
+}
+
+.get-weather:hover,
+.current-location:hover,
+.toggle-unit:hover {
+  background-color: #3498db;
+  transform: scale(1.1);
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.weather-info {
+  margin-top: 20px;
+  background: rgba(52, 73, 94, 0.75);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
+  position: relative; /* For spinner positioning */
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 8px solid #f5f5dc;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto; /* Center spinner */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.temperature {
+  font-size: 3rem;
+  color: #ffffff;
+  transition: color 0.5s;
+}
+
+.animate-temp {
+  animation: bounce 0.5s ease-in-out;
+}
+
+.description,
+.additional-info {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
